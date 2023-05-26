@@ -1,0 +1,72 @@
+.containerButtons {
+  display: flex;
+  flex-direction: column;
+ 
+  background-color: #2b5069;
+  height: 100%;
+  left: 0;
+  align-items: flex-end;
+
+  padding-top: .3em;
+  padding-right:.4em ;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  width: 3em;
+  height: 3em;
+  
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: .3em;
+  padding: .3em;
+}
+.button:hover{
+  background-color:#2f5c7a ;
+}
+.button:active{
+  transform: scale(98%);
+}
+.button > img {
+  object-fit: cover;
+  object-position: center;
+  width: 90%;
+  height: 90%;
+  display: block;
+}
+
+.containerButtonFilter {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.containerArrown {
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: flex-end;
+}
+.containerArrown > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  width: 3em;
+  height: 3em;
+
+  border-radius: 50%;
+  background-color: #ffffffbe;
+}
+.containerArrown > button :active {
+  transform: scale(97%);
+}
+.containerArrown > button :hover {
+  background-color: #fff;
+  border-radius: 50%;
+}
+.containerArrown button > img {
+  width: 100%;
+}

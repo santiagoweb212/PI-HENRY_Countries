@@ -1,0 +1,48 @@
+.containerTextAndTime {
+  display: flex;
+  flex-direction: column;
+}
+.containerDifficulty,.containerSeasson{
+display: flex;
+align-items: center;
+}
+.labelName,.labelDuration {
+  font-size: clamp(1.1em, 1.4vw, 1.5em);
+  font-weight: bold;
+  color: #0d7ca8;
+}
+.inputName,.inputDuration {
+    
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: .5em;
+    border-bottom: .1em solid #0d7ca8;
+    color: #000000d3;
+    
+}
+.labelSeasson,.labelDifficulty{
+    font-weight: 600;
+    padding-right: .5em;
+    font-size: clamp(.7em,1.1vw, 1.5em);
+
+    color: #000000d3;
+    display: inline-flex;
+    line-height: 1;
+    cursor: pointer;
+  
+}
+.labelDifficultyHover{
+  color:rgb(0, 132, 255);
+}
+.labelDifficulty:hover,.labelSeasson:hover{
+  color: rgb(0, 132, 255);
+}
+input[type="radio"]{
+  cursor: pointer;
+    border: none;
+}
+input[type="radio"]:hover + label {
+  color: red; /* Color del label al hacer hover en el radio button */
+}
+

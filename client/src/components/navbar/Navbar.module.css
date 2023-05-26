@@ -1,0 +1,129 @@
+.navbar {
+  background-color: #2b5069;
+  display: flex;
+  height: 5em;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  width: 100%;
+  position: fixed;
+  z-index: 93;
+}
+.containerLogoTitle{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.containerImg {
+display: flex;
+align-items: center;
+justify-content: center;
+  width: 3.5em;
+  height: 3.5em;
+  
+}
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.h1Navbar{
+  color: #f9f9f9;
+  letter-spacing: 0.05rem;
+}
+.ulNavbar {
+  list-style: none;
+  display: flex;
+
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.linkNavbar {
+  color: #f9f9f9;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.009em;
+}
+/* -----------menu movil---------------- */
+.nav-icon-5 {
+  width: 35px;
+  height: 30px;
+
+  position: relative;
+  cursor: pointer;
+  display: none;
+}
+.nav-icon-5 span {
+  background-color: #fff;
+  position: absolute;
+  border-radius: 2px;
+  transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+  width: 100%;
+  height: 4px;
+  transition-duration: 500ms;
+}
+.nav-icon-5 span:nth-child(1) {
+  top: 0px;
+  left: 0px;
+}
+.nav-icon-5 span:nth-child(2) {
+  top: 13px;
+  left: 0px;
+  opacity: 1;
+}
+.nav-icon-5 span:nth-child(3) {
+  bottom: 0px;
+  left: 0px;
+}
+.nav-icon-5:not(.open):hover span:nth-child(1) {
+  transform: rotate(-3deg) scaleY(1.1);
+}
+.nav-icon-5:not(.open):hover span:nth-child(2) {
+  transform: rotate(3deg) scaleY(1.1);
+}
+.nav-icon-5:not(.open):hover span:nth-child(3) {
+  transform: rotate(-4deg) scaleY(1.1);
+}
+.nav-icon-5.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 13px;
+}
+.nav-icon-5.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-icon-5.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 13px;
+}
+/* ------------responsive------ */
+@media (max-width: 700px) {
+  .nav-icon-5 {
+    display: inline-block;
+  }
+  .ulNavbarActive,
+  .ulNavbar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 5em;
+    left: -100%;
+    height: calc(100vh - 5em);
+    transform: translateX(100%);
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+    background-color:  #2b5069cc;
+    transition: transform 1s ease;
+  }
+  .ulNavbar {
+    transform: translateX(-100%);
+    transition: transform 2s ease-in-out;
+  }
+  .linkNavbar {
+    color: #f9f9f9;
+    font-size: 1.5rem;
+  }
+}
