@@ -3,9 +3,7 @@ const countri = require("./countries");
 const activity = require("./activities");
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
-const getCountries = require("../services/getCountries");
 
-  /* let n =  getCountries(); */
 
 
 
@@ -16,3 +14,4 @@ const router = Router();
 router.use("/countries", countri);
 router.use("/activities", activity);
 module.exports = router;
+
