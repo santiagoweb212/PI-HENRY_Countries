@@ -9,7 +9,7 @@ const DetailCountry = () => {
   const { countryId } = useSelector((state) => state.fetchDataReducer.requests);
 
   useEffect(() => {
-    dispatch(fecthData(`https://pi-henrycountries-production.up.railway.app/countries/${id}`, "countryId"));
+    dispatch(fecthData(`${process.env.REACT_APP_API_URL_COUNTRIES_ID}/${id}`, "countryId"));
   }, []);
   if (countryId?.loading) {
     return <h1>...loading</h1>;
