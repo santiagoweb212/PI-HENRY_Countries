@@ -2,15 +2,22 @@ require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
-const { DB_USER, DB_PASSWORD, DB_HOST,PGDATABASE } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, PGDATABASE, PGPORT, NODE_ENV } =
+  process.env;
 
-const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${PGDATABASE}`,
-  {
-    logging: false, // set to console.log to see the raw SQL queries
-    native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-  }
-);
+let connectionString;
+
+if (process.env.NODE_ENV === "production") {
+  // Entorno de despliegue (utilizando las variables proporcionadas por Railway)
+  connectionString = `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${PGPORT}/${PGDATABASE}`;
+} else {
+  connectionString = `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${PGDATABASE}`;
+}
+
+const sequelize = new Sequelize(connectionString, {
+  logging: false, // set to console.log to see the raw SQL queries
+  native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+});
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
