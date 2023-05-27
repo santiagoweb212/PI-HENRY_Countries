@@ -23,9 +23,12 @@ const getCountries = require("./src/services/getCountries.js");
 
 
 // Syncing all the models at once.
+const PORT = process.env.PGPORT || 3001
 conn.sync({ force: false }).then(() => {
-  server.listen(3001, () => {
+  server.listen(PORT, () => {
     getCountries();
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
+    console.log('%s listening at'+PORT); // eslint-disable-line no-console
   });
 });
+
+

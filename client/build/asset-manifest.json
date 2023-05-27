@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.005b2853.chunk.css",
+    "main.js": "/static/js/main.b803a4f6.chunk.js",
+    "main.js.map": "/static/js/main.b803a4f6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6fb35a1e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6fb35a1e.js.map",
+    "static/js/2.1621692a.chunk.js": "/static/js/2.1621692a.chunk.js",
+    "static/js/2.1621692a.chunk.js.map": "/static/js/2.1621692a.chunk.js.map",
+    "static/js/3.f07feb0a.chunk.js": "/static/js/3.f07feb0a.chunk.js",
+    "static/js/3.f07feb0a.chunk.js.map": "/static/js/3.f07feb0a.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.005b2853.chunk.css.map": "/static/css/main.005b2853.chunk.css.map",
+    "static/js/2.1621692a.chunk.js.LICENSE.txt": "/static/js/2.1621692a.chunk.js.LICENSE.txt",
+    "static/media/Filter.b9d2a107.svg": "/static/media/Filter.b9d2a107.svg",
+    "static/media/Map-with-route-and-camera-for-travel.c29abb1c.png": "/static/media/Map-with-route-and-camera-for-travel.c29abb1c.png",
+    "static/media/Search.9646cb78.svg": "/static/media/Search.9646cb78.svg",
+    "static/media/Sorting.6428e049.svg": "/static/media/Sorting.6428e049.svg",
+    "static/media/arrow-left.6d095be6.svg": "/static/media/arrow-left.6d095be6.svg",
+    "static/media/LandingPage.module.css": "/static/media/fondo-hondas.c9c39582.svg",
+    "static/media/globalPlanet.9a7b42e1.png": "/static/media/globalPlanet.9a7b42e1.png",
+    "static/media/lupa.a8e12ef9.svg": "/static/media/lupa.a8e12ef9.svg",
+    "static/media/planet-earth.6f1f604e.png": "/static/media/planet-earth.6f1f604e.png",
+    "static/media/robotTriste.4d3951ff.png": "/static/media/robotTriste.4d3951ff.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6fb35a1e.js",
+    "static/js/2.1621692a.chunk.js",
+    "static/css/main.005b2853.chunk.css",
+    "static/js/main.b803a4f6.chunk.js"
+  ]
+}
