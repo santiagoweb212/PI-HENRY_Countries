@@ -37,7 +37,7 @@ dispatch(setMenuOptions('reset'))
   const handleSearchClick = (e) => {
     dispatch(
       fecthData(
-        `http://localhost:3001/countries?name=${valueSearch}`,
+        `${process.env.REACT_APP_API_URL_COUNTRIES_NAME}${valueSearch}`,
         "countryName",
         "name"
       )
