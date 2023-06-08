@@ -1,6 +1,6 @@
 export const getPageNumber = (currentPage, totalPages) => {
   let pageNumbers = [];
-  const MAX_PAGES = 10;
+  const MAX_PAGES = 6;
   const middlePage = Math.floor(MAX_PAGES / 2);
 
   if (totalPages <= MAX_PAGES) {
