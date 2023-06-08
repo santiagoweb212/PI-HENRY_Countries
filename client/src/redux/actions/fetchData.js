@@ -18,7 +18,7 @@ export const fecthData = (URL,requestId,name) => {
       })
       .catch((error) => {
        
-        console.log('error-->',error.message);
+      
         dispatch(fetchDataFailure(requestId,error));
       });
   };

@@ -14,7 +14,7 @@ const getActivities = async (req, res) => {
   }
 };
 const createACtivities = async (req, res) => {
-  console.log('--->body',req.body)
+
   const { name, difficulty, duration, season, countries } = req.body;
 
   try {

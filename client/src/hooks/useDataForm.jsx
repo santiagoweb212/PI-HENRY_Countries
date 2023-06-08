@@ -68,5 +68,6 @@ export const useDataForm = (initialState) => {
     handleValueInputChange,
     handleOnSubmit,
     handleValidateFormBlur,
+    setValueForm
   };
 };

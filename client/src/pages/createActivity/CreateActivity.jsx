@@ -4,22 +4,30 @@ import styles from "./CreateActivity.module.css";
 import { useEffect, useState } from "react";
 import { fecthData } from "../../redux/actions/fetchData";
 import { Button } from "../../components/button/button";
-import { validateForm } from "../../utils/validateForm";
+import flechaAbajo from "../.././assets/flecha-abajo.svg";
 import { useDataForm } from "../../hooks/useDataForm";
 import { LoaderForm } from "../../components/loader/LoaderForm";
 
 const CreateActivity = () => {
   const dispatch = useDispatch();
   const { countries } = useSelector((state) => state.fetchDataReducer.requests);
-  const {valueForm,errors,loading,response,handleOnSubmit,handleValidateFormBlur,handleValueInputChange} = useDataForm({
+  const {
+    valueForm,
+    errors,
+    loading,
+    response,
+    handleOnSubmit,
+    handleValidateFormBlur,
+    handleValueInputChange,
+    setValueForm
+  } = useDataForm({
     name: "",
     duration: "",
     difficulty: "",
     season: "",
     countries: [],
   });
- 
- 
+
   useEffect(() => {
     if (countries === undefined) {
       dispatch(
@@ -56,7 +64,7 @@ const CreateActivity = () => {
             onBlur={handleValidateFormBlur}
           />
           {errors.duration && (
-            <span   style={{ color: "red" }}>{errors.duration}</span>
+            <span style={{ color: "red" }}>{errors.duration}</span>
           )}
         </div>
         <div>
@@ -71,7 +79,7 @@ const CreateActivity = () => {
               evento={handleValueInputChange}
               value={"1"}
               onBlur={handleValidateFormBlur}
-              checked={valueForm.difficulty==='1'}
+              checked={valueForm.difficulty === "1"}
             />
             <Input
               label={"2"}
@@ -82,7 +90,7 @@ const CreateActivity = () => {
               evento={handleValueInputChange}
               value={"2"}
               onBlur={handleValidateFormBlur}
-              checked={valueForm.difficulty==='2'}
+              checked={valueForm.difficulty === "2"}
             />
             <Input
               label={"3"}
@@ -93,7 +101,7 @@ const CreateActivity = () => {
               evento={handleValueInputChange}
               value={"3"}
               onBlur={handleValidateFormBlur}
-              checked={valueForm.difficulty==='3'}
+              checked={valueForm.difficulty === "3"}
             />
             <Input
               label={"4"}
@@ -104,7 +112,7 @@ const CreateActivity = () => {
               evento={handleValueInputChange}
               value={"4"}
               onBlur={handleValidateFormBlur}
-              checked={valueForm.difficulty==='4'}
+              checked={valueForm.difficulty === "4"}
             />
             <Input
               label={"5"}
@@ -115,10 +123,12 @@ const CreateActivity = () => {
               evento={handleValueInputChange}
               value={"5"}
               onBlur={handleValidateFormBlur}
-              checked={valueForm.difficulty==='5'}
+              checked={valueForm.difficulty === "5"}
             />
             {errors.difficulty && (
-              <span className={styles.spanError} style={{ color: "red" }}>{errors.difficulty}</span>
+              <span className={styles.spanError} style={{ color: "red" }}>
+                {errors.difficulty}
+              </span>
             )}
           </div>
         </div>
@@ -134,7 +144,7 @@ const CreateActivity = () => {
               evento={handleValueInputChange}
               value={"summer"}
               onBlur={handleValidateFormBlur}
-              checked={valueForm.season==='summer'}
+              checked={valueForm.season === "summer"}
             />
             <Input
               label={"Autumn"}
@@ -145,7 +155,7 @@ const CreateActivity = () => {
               evento={handleValueInputChange}
               value={"autumn"}
               onBlur={handleValidateFormBlur}
-              checked={valueForm.season==='autumn'}
+              checked={valueForm.season === "autumn"}
             />
             <Input
               label={"Winter"}
@@ -156,7 +166,7 @@ const CreateActivity = () => {
               evento={handleValueInputChange}
               value={"winter"}
               onBlur={handleValidateFormBlur}
-              checked={valueForm.season==='winter'}
+              checked={valueForm.season === "winter"}
             />
             <Input
               label={"Spring"}
@@ -167,10 +177,12 @@ const CreateActivity = () => {
               evento={handleValueInputChange}
               value={"spring"}
               onBlur={handleValidateFormBlur}
-              checked={valueForm.season==='spring'}
+              checked={valueForm.season === "spring"}
             />
             {errors.season && (
-              <span className={styles.spanError} style={{ color: "red" }}>{errors.season}</span>
+              <span className={styles.spanError} style={{ color: "red" }}>
+                {errors.season}
+              </span>
             )}
           </div>
         </div>
@@ -179,8 +191,11 @@ const CreateActivity = () => {
           name="countries"
           onChange={handleValueInputChange}
           onBlur={handleValidateFormBlur}
-          value={valueForm.countries.length > 0 ? valueForm.countries[valueForm.countries.length - 1] : "Select a country"}
-        
+          value={
+            valueForm.countries.length > 0
+              ? valueForm.countries[valueForm.countries.length - 1]
+              : "Select a country"
+          }
         >
           <option disabled selected value="Select a country">
             Select a country
@@ -194,21 +209,19 @@ const CreateActivity = () => {
               );
             })}
         </select>
+        
         {errors.countries && (
           <span style={{ color: "red" }}>{errors.countries}</span>
         )}
-    {/*  <button name="button submit" type="submit" onChange={(e)=>handleValueInputChange(e)}>enviar</button> */}
+
         <Button
           type={"submit"}
           texto={"create activity"}
           styleName={"buttonCreateACtivity"}
-         
         />
-        {response&&<p className={styles.messageForm}>enviado con exito</p>}
+        {response && <p className={styles.messageForm}>enviado con exito</p>}
       </form>
-      <div> {loading&&<LoaderForm/>}
-      </div>
-     
+      <div> {loading && <LoaderForm />}</div>
     </div>
   );
 };

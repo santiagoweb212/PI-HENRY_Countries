@@ -8,7 +8,6 @@ const Navbar = () => {
     setOpen(!open);
   };
   return (
-   
     <nav className={styles.navbar}>
       <div className={styles.containerLogoTitle}>
         <div className={styles.containerImg}>
@@ -20,7 +19,9 @@ const Navbar = () => {
         <li className={styles.liNavbar}>
           <NavLink
             to={"/"}
-            className={styles.linkNavbar}
+            className={({ isActive }) =>
+              isActive ? styles.linkActive : styles.linkNavbar
+            }
             onClick={open && toggleClick}
           >
             Home
@@ -29,19 +30,12 @@ const Navbar = () => {
         <li className={styles.liNavbar}>
           <NavLink
             to={"/create-activity"}
-            className={styles.linkNavbar}
+            className={({ isActive }) =>
+              isActive ? styles.linkActive : styles.linkNavbar
+            }
             onClick={open && toggleClick}
           >
             Create Activity
-          </NavLink>
-        </li>
-        <li className={styles.liNavbar}>
-          <NavLink
-            to={"/about"}
-            className={styles.linkNavbar}
-            onClick={open && toggleClick}
-          >
-            About
           </NavLink>
         </li>
       </ul>

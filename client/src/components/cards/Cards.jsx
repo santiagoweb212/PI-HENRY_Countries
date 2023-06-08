@@ -28,9 +28,9 @@ export const Cards = () => {
     setLoader(false);
   };
   
-  console.log('-->',data);
+
   if(data?.error?.message ) {
-    console.log('estoy aca')
+    
     return (
       <div className={styles.containerErrorFilter}>
         {loader && <Loader />}
@@ -41,7 +41,7 @@ export const Cards = () => {
   }
 
   if ( message!=='' && data.length===0) {
-    console.log('esty aca-->...', message)
+
     return (
       <div className={styles.containerErrorFilter}>
         {loader && <Loader />}
