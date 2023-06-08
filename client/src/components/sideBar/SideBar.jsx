@@ -1,9 +1,6 @@
 import styles from "./SideBar.module.css";
 import arrowLeft from "../../assets/arrow-back.svg";
-
-
 import DropDown1 from "./DropDowm1";
-
 import SearchBar from "../searchBar/SearchBar";
 import { useToogleState } from "../../hooks/useToogleState";
 import { useSearchCountries } from "../../hooks/useSearchCountries";
