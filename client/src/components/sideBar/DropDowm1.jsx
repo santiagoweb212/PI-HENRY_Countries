@@ -1,19 +1,18 @@
 import styles from "./DropDown1.module.css";
-import flechaAbajo from "../../assets/flecha-abajo.svg";
-import { useEffect, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fecthData } from "../../redux/actions/fetchData";
+
+import { useState } from "react";
+import { useSelector } from "react-redux";
+
 import img from "../../assets/world.svg";
 import imgActivities from "../../assets/activities.svg";
 import filterSvg from "../../assets/filter.svg";
 import orderSvg from "../../assets/Sorting.svg";
-import caretSvg from '../../assets/flecha-abajo.svg'
+import caretSvg from "../../assets/flecha-abajo.svg";
 import {
   getOptionsActivities,
   getOptionsContinent,
 } from "../../utils/getOptionsContinent";
 import { useMultipleRefs } from "../../hooks/useMultipleRefs";
-import { useToogleState } from "../../hooks/useToogleState";
 import { useMenuOptionSelect } from "../../hooks/useMenuOptionSelect";
 import { Button } from "../button/button";
 
@@ -185,10 +184,14 @@ const DropDown1 = () => {
         <p className={styles.p__titleSort} name={"sort"}>
           {menuOptions.sort}
         </p>
-        <div className={styles.wrapperImg__caret}  >
-      <img src={caretSvg} alt="img"  name="sort"
-        onClick={handleSubmenusClick}/>
-    </div>
+        <div className={styles.wrapperImg__caret}>
+          <img
+            src={caretSvg}
+            alt="img"
+            name="sort"
+            onClick={handleSubmenusClick}
+          />
+        </div>
       </div>
 
       <ul
