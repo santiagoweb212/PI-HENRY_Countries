@@ -8,7 +8,7 @@ export const useDataForm = (initialState) => {
   const [response, setResponse] = useState(null);
   const handleValueInputChange = (e) => {
     const { value, name } = e.target;
-    console.log(name);
+    
     if (name === "countries") {
       setValueForm({
         ...valueForm,
@@ -24,7 +24,7 @@ export const useDataForm = (initialState) => {
     const error = validateForm(valueForm);
     setErrors({ ...errors, [name]: error[name] });
 
-    console.log("-->onblur errors", errors);
+    
   };
   const handleOnSubmit = (e) => {
     e.preventDefault();
@@ -32,12 +32,12 @@ export const useDataForm = (initialState) => {
     setErrors(error);
     // Verificar si hay errores
     if (Object.keys(error).length !== 0) {
-      console.log("Existen errores en el formulario:", errors);
+      
       return;
     }
 
     // No hay errores, continuar con el envío del formulario
-    console.log("formulario completo ", valueForm, errors);
+   
     setLoading(true);
     return fetch(process.env.REACT_APP_API_URL_ACTIVITIES, {
       method: "POST",

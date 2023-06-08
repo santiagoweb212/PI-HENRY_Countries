@@ -1,6 +1,6 @@
 export const getOptionsContinent = (data) => {
   const optionsContinent = new Set();
-  console.log("data1--->", data);
+ 
 
   data &&
     data.forEach((element) => {
@@ -11,7 +11,7 @@ export const getOptionsContinent = (data) => {
 };
 
 export const getOptionsActivities = (data) => {
-  console.log("data2--->", data);
+
   const optionsActivities = new Set();
   if (Array.isArray(data)) {
     data &&

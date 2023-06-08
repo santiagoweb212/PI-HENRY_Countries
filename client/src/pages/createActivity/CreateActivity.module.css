@@ -1,8 +1,9 @@
 .container {
   width: 100%;
-  background: #e9e8e8;
-  height: 100vh;
-  padding: 5em 1em 0 1em;
+  background: #fdfdfd;
+  margin-top: 5em;
+  height: calc(100vh - 5em);
+  padding: 0 1em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +17,7 @@ display: flex;
 flex-direction: column;
 gap: 1em;
   border-radius: 34px;
-  background-color:#FAFAFA;
+  background-color:#eceee7;
  
   box-shadow:  25px 25px 51px #b3b3b3,
                -25px -25px 51px #ffffff;
@@ -30,13 +31,14 @@ gap: 1em;
     gap: 1em;
 
     align-items: center;
+    position: relative;
     
     
 }
 .containerTemporada{
     display: flex;
     gap: .5em;
-
+position: relative;
   }
 .containerSelect{
     cursor: pointer;
@@ -64,4 +66,9 @@ gap: 1em;
   padding: .6em;
   background-color: #2b5069;
   border-radius: .3em;
+}
+.spanError{
+  
+  position: absolute;
+  top: 100%;
 }

@@ -1,4 +1,4 @@
-import {
+/* import {
   getOptionsActivities,
   getOptionsContinent,
 } from "../../utils/getOptionsContinent";
@@ -8,7 +8,7 @@ import SearchBar from "../searchBar/SearchBar";
 import styles from "./SearchFilter.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import lupa from "../../assets/Search.svg";
-import filter from "../../assets/Filter.svg";
+import filter from "../../assets/filter.svg";
 import sorting from "../../assets/Sorting.svg";
 import { useEffect, useState } from "react";
 import flechaIzquierda from "../../assets/arrow-left.svg";
@@ -31,7 +31,7 @@ const SearchFilterbar = ({ isOpen, onClick }) => {
   dispatch(getCurrentPage('1'))
   };
 const handleDeleteFilterClick=(e)=>{
-  console.log("esty aca en handle delete")
+ 
 dispatch(setMenuOptions('reset'))
 }
   const handleSearchClick = (e) => {
@@ -50,7 +50,7 @@ dispatch(setMenuOptions('reset'))
 
   useEffect(() => {
     const data = countries && dataFilter(countries, menuOptions);
-    console.log(data);
+ 
     if(data?.hasOwnProperty('message')){
       dispatch(saveDataFilter(data.arrayFiltrado,data.message));
       return
@@ -132,3 +132,4 @@ dispatch(setMenuOptions('reset'))
 };
 
 export default SearchFilterbar;
+ */

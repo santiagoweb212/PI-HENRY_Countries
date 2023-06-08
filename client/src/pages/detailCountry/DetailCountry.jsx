@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fecthData } from "../../redux/actions/fetchData";
 import { useParams } from "react-router-dom";
 import styles from "./DetailCountry.module.css";
+import { Loader } from "../../components/loader/Loader";
 const DetailCountry = () => {
   let { id } = useParams();
   const dispatch = useDispatch();
@@ -12,7 +13,8 @@ const DetailCountry = () => {
     dispatch(fecthData(`${process.env.REACT_APP_API_URL_COUNTRIES_ID}/${id}`, "countryId"));
   }, []);
   if (countryId?.loading) {
-    return <h1>...loading</h1>;
+  
+    return <div className={styles.containerLoader}><Loader/></div> ;
   }
 
   return (

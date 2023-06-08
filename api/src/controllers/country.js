@@ -1,4 +1,4 @@
-const { Op, Sequelize } = require("sequelize");
+const { Op} = require("sequelize");
 const { Country, Activity } = require("../db");
 
 const getCountries = async (req, res) => {
@@ -22,12 +22,14 @@ const getCountries = async (req, res) => {
 
       const countries = await Country.findAll({
         //Buscamos los países en la base de datos según el nombre proporcionado
-        where: { name: { [Op.iLike]: Sequelize.fn("lower", nameCountry) } }, //Utilizamos el operador de Sequelize "iLike" para hacer una búsqueda case-insensitive y la función "lower" de Sequelize para convertir el texto a minúsculas
+        where: { name: { [Op.iLike]: `${nameCountry}%`/* Sequelize.fn("lower", nameCountry) */ } }, //Utilizamos el operador de Sequelize "iLike" para hacer una búsqueda case-insensitive y la función "lower" de Sequelize para convertir el texto a minúsculas
+        
       });
+      
       if (countries.length > 0) res.json(countries);
       //Enviamos la lista de países como respuesta en formato JSON
       else
-        throw {
+        throw  {
           message: "No se encontraron países que coincidan con la búsqueda.",
           statusCode: 404,
         } /* res.status(404).send('No se encontraron países que coincidan con la búsqueda.') */; //. Si no hay elementos en la lista, se devuelve un error 404
@@ -35,7 +37,7 @@ const getCountries = async (req, res) => {
   } catch (error) {
     //Capturamos cualquier error que se produzca durante la ejecución del código
     const statusCode = error.statusCode || 500;
-    res.status(statusCode).send(error.message); //Enviamos un mensaje de error con un status code 500 al cliente
+    return res.status(statusCode).json({error:error}); //Enviamos un mensaje de error con un status code 500 al cliente
   }
 };
 const getCountriesById = async (req, res) => {

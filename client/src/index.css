@@ -20,3 +20,9 @@ code {
 a{
   text-decoration: none;
   }
+  div:not(input) {
+    caret-color: transparent;
+  }
+  section{
+    caret-color: transparent;
+  }

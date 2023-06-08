@@ -7,6 +7,7 @@ export const Pagination = ({
 }) => {
 
   const pageNumber = getPageNumber(currentPage, totalPages);
+  
   return (
     <div className={styles.containerPagination}>
       {pageNumber &&

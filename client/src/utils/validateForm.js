@@ -11,7 +11,7 @@ export const validateForm = (value) => {
     errors.duration = "Please enter a duration";
   }
   if (value.difficulty.trim().length === 0) {
-    console.log("esty aca");
+    
     errors.difficulty = "Please select a difficulty";
   }
   if (value.season.trim().length === 0) {

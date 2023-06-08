@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Pagination } from "../pagination/Pagination";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { Card } from "../card/card";
 import styles from "./Cards.module.css";
 import { getCurrentPage } from "../../redux/actions/getCurrentPage";
 import robotTriste from "../../assets/robotTriste.png";
 import { Loader } from "../loader/Loader";
 export const Cards = () => {
-  const { data, message } = useSelector((state) => state.saveDataFilteReducer);
+  const {data,message} = useSelector((state) => state.saveDataFilteReducer);
   const arrayDb = useSelector(
     (state) => state.fetchDataReducer.requests.countries?.data
   );
@@ -27,10 +27,22 @@ export const Cards = () => {
   const handleImageLoad = () => {
     setLoader(false);
   };
+  
+  console.log('-->',data);
+  if(data?.error?.message ) {
+    console.log('estoy aca')
+    return (
+      <div className={styles.containerErrorFilter}>
+        {loader && <Loader />}
+        <img src={robotTriste} alt="robot triste" onLoad={handleImageLoad} />
+        {!loader && <p className={styles.messageErrorFilter}>{data?.error?.message}</p>}
+      </div>
+    );
+  }
 
-  if (message !== "" && data?.length ===0) {
-    console.log('data--->mesage',data)
-    return (  
+  if ( message!=='' && data.length===0) {
+    console.log('esty aca-->...', message)
+    return (
       <div className={styles.containerErrorFilter}>
         {loader && <Loader />}
         <img src={robotTriste} alt="robot triste" onLoad={handleImageLoad} />
@@ -44,16 +56,21 @@ export const Cards = () => {
   };
 
   return (
-    <>
+<>
+
       {data && (
         <>
-          <Pagination
-            currentPage={numberPage}
-            handlePageClickNumber={handlePageClickNumber}
-            totalPages={Math.ceil(data.length / 10)}
-          />
+          <div className={styles.wrapperPagination}>
+            
+            <Pagination
+              currentPage={numberPage}
+              handlePageClickNumber={handlePageClickNumber}
+              totalPages={Math.ceil(data.length / 10)}
+            />
+          </div>
+
           <div className={styles.containerCards}>
-            {data
+            {data && data
               .slice((numberPage - 1) * 10, numberPage * 10)
               .map((country) => (
                 <Card
@@ -67,6 +84,7 @@ export const Cards = () => {
           </div>
         </>
       )}
-    </>
+    </> 
+   
   );
 };

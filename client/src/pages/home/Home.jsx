@@ -1,15 +1,20 @@
 import { useEffect, useRef, useState } from "react";
-import Navbar from "../../components/navbar/Navbar";
-import SearchFilterbar from "../../components/searchFilterBar/SearchFilterBar";
-import { useDispatch, useSelector } from "react-redux";
+
+import { useDispatch } from "react-redux";
 import { fecthData } from "../../redux/actions/fetchData";
 import styles from "./Home.module.css";
-import SearchBar from "../../components/searchBar/SearchBar";
+
 import { Cards } from "../../components/cards/Cards";
+import SideBar from "../../components/sideBar/SideBar";
 export const Home = () => {
   const dispatch = useDispatch();
-  const [isOPen, setIsOpen] = useState(false);
 
+  const [isOPen, setIsOpen] = useState(false);
+  const [isActionFired, setIsActionFired] = useState(() => {
+    const storedIsActionFired = localStorage.getItem("isActionFired");
+
+    return storedIsActionFired ? JSON.parse(storedIsActionFired) : false;
+  });
   const divRef = useRef(null);
 
   const handleOpenMenuClick = () => {
@@ -25,26 +30,36 @@ export const Home = () => {
   };
 
   useEffect(() => {
-   
-    dispatch(
-      fecthData(process.env.REACT_APP_API_URL_COUNTRIES_ALL, "countries")
-    );
+    const handleBeforeUnload = () => {
+      localStorage.removeItem("isActionFired");
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    if (!isActionFired) {
+      dispatch(
+        fecthData(process.env.REACT_APP_API_URL_COUNTRIES_ALL, "countries")
+      );
+      setIsActionFired(true);
+      localStorage.setItem("isActionFired", JSON.stringify(true));
+    }
     dispatch(fecthData(process.env.REACT_APP_API_URL_ACTIVITIES, "activities"));
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
   }, []);
+
   return (
-    <div>
-      
-      <section className={styles.container}>
-        <div className={styles.containerRelative}>
-        <div className={styles.boxFilter} ref={divRef}>
-          <SearchFilterbar isOpen={isOPen} onClick={handleOpenMenuClick} />
-        </div>
-        </div>
-        
-        <div className={styles.boxCards}>
-          <Cards/>
-        </div>
-      </section>
-    </div>
+    <section className={styles.container}>
+      {/*  <div className={styles.containerRelative}>
+          <div className={styles.boxFilter} ref={divRef}> */}
+
+      {/* <SearchFilterbar isOpen={isOPen} onClick={handleOpenMenuClick} /> */}
+      {/* </div> */}
+      {/*  </div> */}
+      <SideBar />
+     <div className={styles.boxCards}><Cards /></div>
+    </section>
   );
 };

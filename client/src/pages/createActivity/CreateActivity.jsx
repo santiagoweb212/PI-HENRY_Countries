@@ -56,7 +56,7 @@ const CreateActivity = () => {
             onBlur={handleValidateFormBlur}
           />
           {errors.duration && (
-            <span style={{ color: "red" }}>{errors.duration}</span>
+            <span   style={{ color: "red" }}>{errors.duration}</span>
           )}
         </div>
         <div>
@@ -118,7 +118,7 @@ const CreateActivity = () => {
               checked={valueForm.difficulty==='5'}
             />
             {errors.difficulty && (
-              <span style={{ color: "red" }}>{errors.difficulty}</span>
+              <span className={styles.spanError} style={{ color: "red" }}>{errors.difficulty}</span>
             )}
           </div>
         </div>
@@ -170,7 +170,7 @@ const CreateActivity = () => {
               checked={valueForm.season==='spring'}
             />
             {errors.season && (
-              <span style={{ color: "red" }}>{errors.season}</span>
+              <span className={styles.spanError} style={{ color: "red" }}>{errors.season}</span>
             )}
           </div>
         </div>

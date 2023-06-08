@@ -8,6 +8,7 @@ const Navbar = () => {
     setOpen(!open);
   };
   return (
+   
     <nav className={styles.navbar}>
       <div className={styles.containerLogoTitle}>
         <div className={styles.containerImg}>

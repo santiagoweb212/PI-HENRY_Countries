@@ -1,9 +1,9 @@
 import { SET_MENU_OPTIONS } from "../types";
 
 const initialState = {
-  continents: "all continents",
+  continents: "All Continents",
   sort: "random",
-  activities: "all activities",
+  activities: "All Activities",
 };
 /* all activities  ascendente A-z  all continents*/
 const setMenuOptionsReducer = (state = initialState, action) => {
@@ -12,9 +12,9 @@ const setMenuOptionsReducer = (state = initialState, action) => {
       if (action.name === "reset") {
         return {
           ...state,
-          continents: "all continents",
+          continents: "All Continents",
           sort: "random",
-          activities: "all activities",
+          activities: "All Activities",
         };
       }
 

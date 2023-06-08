@@ -1,38 +1,29 @@
 .container {
   display: flex;
   width: 100%;
-  height: auto;
- 
+
+
+  display: flex;
+  
  
 }
 .containerRelative{
   width: 3.2em;
   height: auto;
-  background-color: #14b43c00;
-  position: relative;
-  display: hidden;
-}
-.boxFilter {
-  overflow:auto;
- z-index: 92;
-
-  width: 19em;
-  margin-left: -15.8em;
-  position: fixed;
-  top: 5em;
-height: 100%;
-  background-color: #2b5069;
  
-  transition: margin-left 0.5s ease-in-out; /* Transición del margen izquierdo */
+  position: relative;
+ 
 }
 
 
 
 .boxCards {
-  background-color: #e6e6e6;
+ 
+width: calc(100% - 2.5em);
+display: flex;
+flex-direction: column;
+margin-left: 2.5em;
+  gap: 0.5em;
 
- flex: 1;
-  
-margin-top: 5em;
   
 }

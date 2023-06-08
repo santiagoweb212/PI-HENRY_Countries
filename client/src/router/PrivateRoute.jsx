@@ -8,7 +8,7 @@ const PrivateRoute = () => {
 
   return (
     <div>
-      {savedAuthState?.auth || auth ? <Outlet /> : <Navigate to={"/welcome"} />}{" "}
+      {savedAuthState?.auth || auth ? <Outlet /> : <Navigate to={"/welcome"} />}
     </div>
   );
 };

@@ -6,6 +6,7 @@ import Layaout from "../layaout/Layaout";
 import CreateActivity from "../pages/createActivity/CreateActivity";
 import PrivateRoute from "./PrivateRoute";
 
+
 export const router = createBrowserRouter([
   { path: "/welcome", element: <LandingPage /> },
   {
@@ -23,4 +24,5 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  
 ]);

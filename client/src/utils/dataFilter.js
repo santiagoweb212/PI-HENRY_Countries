@@ -2,17 +2,15 @@ import { sortFilterData } from "./sortFilterData";
 
 export const dataFilter = (array, option) => {
   let arrayFiltrado = [...array.data];
-  if( option.continents === "all continents" &&
-  option.activities === "all activities" &&
+  if( option.continents === "All Continents" &&
+  option.activities === "All Activities" &&
   option.sort === "random"){
-    console.log("op0-->",option.sort)
-  
-    console.log("arrayFiltrado-->",arrayFiltrado)
+ 
     return arrayFiltrado;
   }
   if (
-    option.continents === "all continents" &&
-    option.activities === "all activities" &&
+    option.continents === "All Continents" &&
+    option.activities === "All Activities" &&
     option.sort !== "random"
   ) {
     arrayFiltrado = sortFilterData(arrayFiltrado, option.sort);
@@ -20,8 +18,8 @@ export const dataFilter = (array, option) => {
   }
 
   if (
-    option.continents !== "all continents" &&
-    option.activities !== "all activities" &&
+    option.continents !== "All Continents" &&
+    option.activities !== "All Activities" &&
     option.sort !== "random"
   ) {
     arrayFiltrado =
@@ -47,21 +45,21 @@ arrayFiltrado = sortFilterData(arrayFiltrado, option.sort);
  
   }
   if (
-    option.continents === "all continents" &&
-    option.activities !== "all activities"&&option.sort !== "random"
+    option.continents === "All Continents" &&
+    option.activities !== "All Activities"&&option.sort !== "random"
   ) {
     arrayFiltrado =
       array &&
       array.data.filter((item) => {
         return item.activities.some((item) => item.name === option.activities);
       });
-    console.log("4-->", arrayFiltrado);
+   
     return sortFilterData(arrayFiltrado, option.sort);
   }
 
   if (
-    option.continents !== "all continents" &&
-    option.activities === "all activities"
+    option.continents !== "All Continents" &&
+    option.activities === "All Activities"
   ) {
     arrayFiltrado =
       array &&
@@ -73,15 +71,15 @@ arrayFiltrado = sortFilterData(arrayFiltrado, option.sort);
     return sortFilterData(arrayFiltrado, option.sort)
   }
   if (
-    option.continents === "all continents" &&
-    option.activities === "all activities"
+    option.continents === "All Continents" &&
+    option.activities === "All Activities"
   ) {
-    console.log("1-->", array.data);
+   
     return (arrayFiltrado = array.data);
   }
   if (
-    option.continents !== "all continents" &&
-    option.activities === "all activities"
+    option.continents !== "All Continents" &&
+    option.activities === "All Activities"
   ) {
     arrayFiltrado =
       array &&
@@ -90,12 +88,12 @@ arrayFiltrado = sortFilterData(arrayFiltrado, option.sort);
           return c.includes(option.continents);
         });
       });
-    console.log("2-->", arrayFiltrado);
+  
     return arrayFiltrado;
   }
   if (
-    option.activities !== "all activities" &&
-    option.continents !== "all continents"
+    option.activities !== "All Activities" &&
+    option.continents !== "All Continents"
   ) {
     arrayFiltrado =
       array &&
@@ -114,19 +112,19 @@ arrayFiltrado = sortFilterData(arrayFiltrado, option.sort);
       let message = `there is no ${option.activities} in ${option.continents}`;
       return { arrayFiltrado, message };
     }
-    console.log("3-->", arrayFiltrado);
+
     return arrayFiltrado;
   }
   if (
-    option.continents === "all continents" &&
-    option.activities !== "all activities"
+    option.continents === "All Continents" &&
+    option.activities !== "All Activities"
   ) {
     arrayFiltrado =
       array &&
       array.data.filter((item) => {
         return item.activities.some((item) => item.name === option.activities);
       });
-    console.log("4-->", arrayFiltrado);
+   
     return arrayFiltrado;
   }
 };

@@ -1,6 +1,6 @@
 .buttonLanding {
   width: auto;
-  background-color: #c99aff;
+  background-color: #c99affe1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,9 +12,13 @@
   text-align: center;
   border: none;
   color: #fff;
+  cursor: pointer;
 }
 .buttonLanding:active {
   transform: scale(98%);
+}
+.buttonLanding:hover {
+  background-color: #c99aff;
 }
 @media screen and (max-width: 490px) {
   .buttonLanding {
@@ -25,19 +29,24 @@
 }
 /* --------------button clearFilter----------- */
 .buttonClearFilter{
-  width: 80%;
-  height: 3rem;
+  
+  margin-top: .5em;
+  margin-left:2.5em;
+  padding: .3em 1.5em;
 font-size: 1.3rem;
 border-radius: .7rem;
 font-weight: bold;
 color: #f9f9f9;
-background-color: #1a96e8be;
+background-color: #466980;
 letter-spacing: 0.03em;
 outline: none;
 border :none;
+overflow: hidden;
+white-space: nowrap;
+
 }
 .buttonClearFilter:hover{
-  background-color: #1a96e8;
+  background-color: #036cb3;
 }
 .buttonClearFilter:active{
   transform: scale(99%);

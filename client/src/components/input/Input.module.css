@@ -41,6 +41,7 @@ align-items: center;
 input[type="radio"]{
   cursor: pointer;
     border: none;
+    
 }
 input[type="radio"]:hover + label {
   color: red; /* Color del label al hacer hover en el radio button */

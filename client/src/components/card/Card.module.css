@@ -4,7 +4,7 @@
   background-color: #2b5069;;
   width: 18em;
   max-width: 25em;
-  
+  cursor: pointer;
 }
 .container:hover{
   transform: scale(105%);
