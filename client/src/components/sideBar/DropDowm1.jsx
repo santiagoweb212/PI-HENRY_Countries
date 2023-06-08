@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 import img from "../../assets/world.svg";
 import imgActivities from "../../assets/activities.svg";
-import filterSvg from "../../assets/filter.svg";
+import filterSvg from "../../assets/newfilter.svg";
 import orderSvg from "../../assets/Sorting.svg";
 import caretSvg from "../../assets/flecha-abajo.svg";
 import {
